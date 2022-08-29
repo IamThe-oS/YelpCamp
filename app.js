@@ -115,8 +115,9 @@ app.use((err, req, res, next) => {
 });
 
 //Port
+const port = process.env.PORT || 3000;
 app.listen(3000, () => {
-  console.log("Open on port 3000");
+  console.log(`Open on port ${port}`);
 });
 
 // const scriptSrcUrls = [
