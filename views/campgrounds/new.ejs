@@ -1,0 +1,58 @@
+<% layout('layouts/boilerplate') -%>
+<div class="col-6 offset-3">
+    <h1 class="text-center my-4">New Campground</h1>
+    <form action="/campgrounds" method="POST" class="validated-form" novalidate enctype="multipart/form-data">
+        <div class="mb-4">
+            <label class="form-label" for="title">Name</label>
+            <input class="form-control" type="text" id="title" placeholder="Name" name="campground[title]" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-4">
+            <label class="form-label" for="location">Location</label>
+            <input class="form-control" type="text" id="location" placeholder="Location" name="campground[location]"
+                required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-4">
+            <label class="form-label" for="image">Image</label>
+            <input class="form-control" type="file" id="image" name="image" multiple>
+            <!-- <label class="form-label" for="image">Image</label>
+            <input class="form-control" type="text" id="image" placeholder="Image" name="campground[image]" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div> -->
+        </div>
+        <div class="input-group mb-4">
+            <label class="form-label" for="price">Price</label>
+            <div class="input-group">
+                <span class="input-group-text" id="price">$</span>
+                <input type="text" class="form-control" value="0.00" aria-label="price" aria-describedby="price"
+                    name="campground[price]" id="price" required>
+            </div>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-4">
+            <label class="form-label" for="description">Description</label>
+            <textarea class="form-control" type="text" id="description" placeholder="Description"
+                name="campground[description]" rows="5" required></textarea>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="my-4 d-flex justify-content-around">
+            <div class="d-grid col-5">
+                <button class="btn btn-success">Submit</button>
+            </div>
+            <div class="d-grid col-5">
+                <a class="btn btn-secondary" href="/campgrounds">Cancel</a>
+
+            </div>
+        </div>
+    </form>
+</div>

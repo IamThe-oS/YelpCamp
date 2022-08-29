@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="/css/users.css">
+
+<% layout('layouts/boilerplate') -%>
+
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-xl-12 offset-xl-0 col-sm-10 offset-sm-0">
+            <div class="card shadow" style="width: 22rem;">
+                <img src="https://res.cloudinary.com/dh8h4jvnr/image/upload/v1661336321/login-img_Large_mkpvhi.jpg"
+                 alt="" class="card-img-top img-thumbnail">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Login</h5>
+                    <form action="/login" method="POST" class="border-top">
+                        <div class="mb-4 py-2">
+                            <label class="form-label" for="username">Username</label>
+                            <input class="form-control" type="text" id="username" placeholder="username" name="username" required autofocus>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-control" type="password" id="password" placeholder="password" name="password" required>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-success btn-block">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
