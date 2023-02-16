@@ -14,12 +14,18 @@ module.exports.renderNewForm = (req, res) => {
 module.exports.createCampground = async (req, res, next) => {
   // if(!req.body.campground) throw new ExpressError(400, 'Invalid Campground Data')
   const location = req.body.campground.location;
+  // console.log(location)
   const response = await fetch(
     `https://nominatim.openstreetmap.org/search?format=geojson&q=${location}`
   );
   const data = await response.json();
 
   const campground = new Campground(req.body.campground);
+  // console.log(campground)
+  // console.log(data)
+  if (data.features) {
+    req.flash("error", "Sorry, address not found. Please use a broader address.")
+    res.redirect("/campgrounds/new");}
   campground.geometry = data.features[0].geometry;
   campground.images = req.files.map((f) => ({
     url: f.path,
